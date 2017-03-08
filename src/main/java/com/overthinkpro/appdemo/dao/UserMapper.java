@@ -10,7 +10,5 @@ public interface UserMapper {
 	
 	public int deleteUser(User user);
 	
-	public boolean addBalance(User user);
-	
-	public boolean reduceBalance(User user);
+	public boolean updateBalance(User user);
 }

@@ -30,13 +30,8 @@ public class UserServerImpl implements UserServer {
 	}
 
 	@Override
-	public boolean addBalance(User user) {
-		return userMapper.reduceBalance(user);
-	}
-
-	@Override
-	public boolean reduceBalance(User user) {
-		return userMapper.reduceBalance(user);
+	public boolean updateBalance(User user) {
+		return userMapper.updateBalance(user);
 	}
 
 }

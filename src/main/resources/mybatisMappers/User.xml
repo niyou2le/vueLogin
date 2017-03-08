@@ -17,12 +17,8 @@
 		DELETE FROM t_user WHERE idCard=#{idCard}
 	</delete>
 	
-	<update id="addBalance" parameterType="user">
-		UPDATE t_user SET balance=(balance - #{balance}) WHERE id=#{id}
-	</update>
-	
-	<update id="reduceBalance" parameterType="user">
-		UPDATE t_user SET balance=(balance + #{balance}) WHERE id=#{id}
+	<update id="updateBalance" parameterType="user">
+		UPDATE t_user SET balance=#{balance} WHERE idCard=#{idCard}
 	</update>
 	
 </mapper>

@@ -30,7 +30,7 @@ public class UserControl {
 		return result.failure("用户名密码错误");
 	}
 
-	@RequestMapping(value = "/regist")
+	@RequestMapping(value = "/register")
 	public @ResponseBody Response regist(@RequestBody User user) {
 		if (!user.getIdCard().equals("") && !user.getPassword().equals("")) {
 			user.setId(UUIDUtil.getUUID());
@@ -42,22 +42,13 @@ public class UserControl {
 		return result.failure();
 	}
 
-	@RequestMapping(value = "/addBalance")
+	@RequestMapping(value = "/updateBalance")
 	public @ResponseBody Response addBalance(@RequestBody User user) {
-		boolean isChange = userServer.addBalance(user);
+		boolean isChange = userServer.updateBalance(user);
 		if(isChange){
 			return result.success(isChange);
 		}
 		return result.failure();
 	}
 	
-	@RequestMapping(value = "/reduceBalance")
-	public @ResponseBody Response reduceBalance(@RequestBody User user) {
-		boolean isChange = userServer.reduceBalance(user);
-		if(isChange){
-			return result.success(isChange);
-		}
-		return result.failure();
-	}
-
 }
