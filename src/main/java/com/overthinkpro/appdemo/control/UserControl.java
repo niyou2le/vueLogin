@@ -18,7 +18,7 @@ public class UserControl {
 	@Autowired
 	private UserServer userServer;
 
-	@RequestMapping(value = "/findUser", method = RequestMethod.POST)
+	@RequestMapping(value = "/findUser", method = RequestMethod.POST, produces = "application/json")
 	public Response findUser(@RequestBody User user) {
 		if (!user.getIdCard().equals("") && !user.getPassword().equals("")) {
 			User currentUser = userServer.findUser(user);
