@@ -5,7 +5,7 @@
 	<artifactId>addDemo</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>addDemo</name>
+	<name>vuelogin</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
