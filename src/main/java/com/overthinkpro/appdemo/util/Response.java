@@ -1,4 +1,4 @@
-package com.overthinkpro.appdemo.common;
+package com.overthinkpro.appdemo.util;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,7 +10,6 @@ public class Response {
 	private static final String Error = "error";
 	private Meta meta;
 	private Object data;
-	private Map<Object, Object> result = new HashMap<Object, Object>();
 
 	/**
 	 * 存在复杂组合数据对象或者没有数据对象的成功响应
@@ -73,6 +72,7 @@ public class Response {
 	 * @param value
 	 * @return
 	 */
+	@SuppressWarnings("unchecked")
 	public Response put(String key, Object value) {
 		if (data == null || !(data instanceof Map)) {
 			data = new HashMap<Object, Object>();
@@ -87,6 +87,7 @@ public class Response {
 	 * @return
 	 */
 	public Map<Object, Object> toSimpleResult() {
+		Map<Object, Object> result = new HashMap<Object, Object>();
 		result.put("meta", meta);
 		return result;
 	}
@@ -97,6 +98,7 @@ public class Response {
 	 * @return
 	 */
 	public Map<Object, Object> toCombineResult() {
+		Map<Object, Object> result = new HashMap<Object, Object>();
 		result.put("meta", meta);
 		result.put("data", data);
 		return result;
@@ -144,6 +146,6 @@ public class Response {
 
 	@Override
 	public String toString() {
-		return "Response [meta=" + meta + ", data=" + data + ", result=" + result + "]";
+		return "Response [meta=" + meta + ", data=" + data + "]";
 	}
 }

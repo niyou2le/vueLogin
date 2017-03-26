@@ -1,4 +1,4 @@
-package com.overthinkpro.appdemo.common;
+package com.overthinkpro.appdemo.util;
 
 import java.util.UUID;
 

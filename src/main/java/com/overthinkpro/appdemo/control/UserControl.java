@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.overthinkpro.appdemo.common.Response;
 import com.overthinkpro.appdemo.po.User;
 import com.overthinkpro.appdemo.server.UserServer;
 import com.overthinkpro.appdemo.util.ErrorMsg;
+import com.overthinkpro.appdemo.util.Response;
 
 @RestController
 @RequestMapping("/user")
